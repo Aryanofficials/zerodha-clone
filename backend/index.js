@@ -244,73 +244,6 @@ app.get("/profile", authenticateUser, async (req, res) => {
 });
 
 
-app.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    if (!email || !password) {
-      return res.status(400).json({
-        success: false,
-        message: "Email and password are required",
-      });
-    }
-
-    const user = await User.findOne({
-      email: email.toLowerCase(),
-    });
-
-    if (!user) {
-      return res.status(401).json({
-        success: false,
-        message: "Invalid email or password",
-      });
-    }
-
-    const isPasswordCorrect = await bcrypt.compare(
-      password,
-      user.password
-    );
-
-    if (!isPasswordCorrect) {
-      return res.status(401).json({
-        success: false,
-        message: "Invalid email or password",
-      });
-    }
-
-    const token = jwt.sign(
-      {
-        userId: user._id,
-      },
-      process.env.JWT_SECRET,
-      {
-        expiresIn: "7d",
-      }
-    );
-
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "lax",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
-
-    return res.status(200).json({
-      success: true,
-      message: "Login successful",
-    });
-
-  } catch (error) {
-    console.error("Login Error:", error);
-
-    return res.status(500).json({
-      success: false,
-      message: "Something went wrong",
-    });
-  }
-});
-
-
 app.post("/logout", (req, res) => {
 
     res.clearCookie("token", {
@@ -572,9 +505,19 @@ app.post("/newOrder", async(req, res)=>{
     res.send("Order saved!");
 });
 
-
-app.listen(PORT, ()=>{
-console.log("App stared!");
-    mongoose.connect(url);
-    console.log("Connected to DB!")
+app.get("/", (req, res) => {
+  res.send("Zerodha Clone Backend is running successfully 🚀");
 });
+
+mongoose
+  .connect(url)
+  .then(() => {
+    console.log("Connected to MongoDB");
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB Connection Error:", err);
+  });
