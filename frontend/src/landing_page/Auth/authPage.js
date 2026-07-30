@@ -62,7 +62,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
       );
 
       if (response.status === 201) {
-        window.open("https://YOUR-DASHBOARD-NAME.onrender.com", "_self");
+        window.open("https://zerodha-dashboard-lrms.onrender.com/", "_self");
       }
     } catch (error) {
       setMessage(
@@ -100,7 +100,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
       if (response.status === 200) {
         setLoading(false);
-        window.open("https://YOUR-DASHBOARD-NAME.onrender.com", "_self");
+        window.open("https://zerodha-dashboard-lrms.onrender.com/", "_self");
       }
     } catch (error) {
       setLoading(false);
