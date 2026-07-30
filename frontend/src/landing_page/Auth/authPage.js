@@ -83,32 +83,40 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   };
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    
-    setLoading(true);
-    try {
-      const response = await axios.post(
-        "https://zerodha-clone-wz77.onrender.com/login",
-        {
-          email: loginData.email,
-          password: loginData.password,
-        },
-        {
-          withCredentials: true,
-        }
-      );
+  e.preventDefault();
 
-      if (response.status === 200) {
-        setLoading(false);
-        window.open("https://zerodha-dashboard-lrms.onrender.com/", "_self");
+  console.log("Login button clicked");
+
+  setLoading(true);
+
+  try {
+    console.log("Sending request...");
+
+    const response = await axios.post(
+      "https://zerodha-clone-wz77.onrender.com/login",
+      {
+        email: loginData.email,
+        password: loginData.password,
+      },
+      {
+        withCredentials: true,
       }
-    } catch (error) {
-      setLoading(false);
-      setMessage(
-        error.response?.data?.message || "Login failed"
+    );
+
+    console.log("Response:", response);
+
+    if (response.status === 200) {
+      window.open(
+        "https://zerodha-dashboard-lrms.onrender.com/",
+        "_self"
       );
     }
-  };
+  } catch (error) {
+    console.log("Login error:", error);
+  }
+
+  setLoading(false);
+};
 
   return (
 <div className="auth-page">
