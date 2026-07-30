@@ -18,7 +18,7 @@ function Navbar() {
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a
-                                className="nav-link active" href="http://localhost:3001">
+                                className="nav-link active" href="https://zerodha-dashboard-lrms.onrender.com">
                                        Dashboard
                                         </a>
                                 </li>

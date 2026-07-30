@@ -62,7 +62,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
       );
 
       if (response.status === 201) {
-        window.location.href = "http://localhost:3001";
+        window.open("https://YOUR-DASHBOARD-NAME.onrender.com", "_self");
       }
     } catch (error) {
       setMessage(
@@ -100,7 +100,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
       if (response.status === 200) {
         setLoading(false);
-        window.location.href = "http://localhost:3001";
+        window.open("https://YOUR-DASHBOARD-NAME.onrender.com", "_self");
       }
     } catch (error) {
       setLoading(false);
