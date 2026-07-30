@@ -58,7 +58,8 @@ const Menu = () => {
       );
 
       // After logout go to login page
-      window.location.href = "http://localhost:3000/auth?mode=login";
+      window.location.href =
+  "https://zerodha-frontend-abc123.onrender.com/auth?mode=login";
     } catch (error) {
       console.log("Logout Error:", error);
     }

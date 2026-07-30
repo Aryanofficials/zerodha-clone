@@ -21,7 +21,8 @@ function Profile() {
                 console.log("Profile error:", error);
 
                 // No valid login session
-                window.location.href = "http://localhost:3000/auth?mode=login";
+                window.location.href =
+  "https://zerodha-frontend-abc123.onrender.com/auth?mode=login";
             }
         };
 
@@ -38,7 +39,8 @@ function Profile() {
                 }
             );
 
-            window.location.href = "http://localhost:3000/auth";
+            window.location.href =
+  "https://zerodha-frontend-abc123.onrender.com/auth";
 
         } catch (error) {
             console.log("Logout error:", error);
