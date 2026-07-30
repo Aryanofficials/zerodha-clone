@@ -12,31 +12,31 @@ import {
   CircleFill,
 } from "react-bootstrap-icons";
 
-useEffect(() => {
-  const fetchUser = async () => {
-    try {
-      const response = await axios.get(
-        "https://zerodha-clone-wz77.onrender.com/profile",
-        {
-          withCredentials: true,
-        }
-      );
-
-      setUser(response.data.user);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  fetchUser();
-}, []);
-
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-
   const [user, setUser] = useState(null);
   const dropdownRef = useRef(null);
+
+    // Fetch logged-in user
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await axios.get(
+          "https://zerodha-clone-wz77.onrender.com/profile",
+          {
+            withCredentials: true,
+          }
+        );
+
+        setUser(response.data.user);
+      } catch (err) {
+        console.log("User fetch error:", err);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   // Get logged-in user
  useEffect(() => {
