@@ -1,0 +1,408 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f3f7ff;
+}
+
+/* ===========================
+   PAGE
+=========================== */
+
+.auth-page{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+}
+
+/* ===========================
+   LEFT PANEL
+=========================== */
+
+.left-panel{
+    width:50%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#0d6efd,#6f42c1);
+}
+
+.brand{
+    width:75%;
+    color:white;
+    z-index:2;
+}
+
+.brand h1{
+    font-size:55px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.brand p{
+    font-size:20px;
+    line-height:35px;
+    opacity:.95;
+}
+
+/* ===========================
+   FLOATING CIRCLES
+=========================== */
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+}
+
+.c1{
+    width:260px;
+    height:260px;
+
+    top:-80px;
+    left:-80px;
+
+    animation:float 7s infinite ease-in-out;
+}
+
+.c2{
+    width:320px;
+    height:320px;
+
+    bottom:-120px;
+    right:-120px;
+
+    animation:float2 8s infinite ease-in-out;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes float2{
+
+    0%{
+        transform:translateX(0px);
+    }
+
+    50%{
+        transform:translateX(-25px);
+    }
+
+    100%{
+        transform:translateX(0px);
+    }
+
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+
+.right-panel{
+
+    width:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#f6f8fc;
+
+    padding:40px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.auth-card{
+
+    width:430px;
+
+    background:rgba(255,255,255,.8);
+
+    backdrop-filter:blur(25px);
+
+    padding:45px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.08);
+
+}
+
+.auth-card h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+.subtitle{
+
+    margin-top:8px;
+
+    margin-bottom:30px;
+
+    color:#777;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    height:56px;
+
+    border-radius:12px;
+
+    border:1px solid #dcdcdc;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.35s;
+
+}
+
+.input-group input:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:
+    0 0 12px rgba(13,110,253,.2);
+
+}
+
+/* ===========================
+   PASSWORD
+=========================== */
+
+.password-box{
+
+    position:relative;
+
+}
+
+.eye{
+
+    position:absolute;
+
+    right:18px;
+
+    top:17px;
+
+    cursor:pointer;
+
+    color:#666;
+
+    font-size:22px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.auth-btn{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #0d6efd,
+        #6f42c1
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    margin-top:10px;
+
+}
+
+.auth-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 18px 35px rgba(13,110,253,.35);
+
+}
+
+.auth-btn:disabled{
+
+    opacity:.8;
+
+    cursor:not-allowed;
+
+}
+
+/* ===========================
+   MESSAGE
+=========================== */
+
+.alert-box{
+
+    background:#ffe7e7;
+
+    color:#cc0000;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+   SWITCH
+=========================== */
+
+.switch-text{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#666;
+
+}
+
+.switch-link{
+
+    color:#0d6efd;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.switch-link:hover{
+
+    color:#6f42c1;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:991px){
+
+.left-panel{
+
+display:none;
+
+}
+
+.right-panel{
+
+width:100%;
+
+padding:20px;
+
+}
+
+.auth-card{
+
+width:100%;
+
+max-width:460px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.auth-card{
+
+padding:28px;
+
+}
+
+.auth-card h2{
+
+font-size:28px;
+
+}
+
+.subtitle{
+
+font-size:14px;
+
+}
+
+.brand h1{
+
+font-size:40px;
+
+}
+
+}
