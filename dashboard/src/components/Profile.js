@@ -9,7 +9,7 @@ function Profile() {
         const getProfile = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:3002/profile",
+                    "https://zerodha-clone-wz77.onrender.com/profile",
                     {
                         withCredentials: true,
                     }
@@ -31,7 +31,7 @@ function Profile() {
     const handleLogout = async () => {
         try {
             await axios.post(
-                "http://localhost:3002/logout",
+                "https://zerodha-clone-wz77.onrender.com/logout",
                 {},
                 {
                     withCredentials: true,

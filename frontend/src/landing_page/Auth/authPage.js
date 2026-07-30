@@ -50,7 +50,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/signup",
+        "https://zerodha-clone-wz77.onrender.com/signup",
         {
           fullName: signupData.fullName,
           email: signupData.email,
@@ -88,7 +88,7 @@ const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3002/login",
+        "https://zerodha-clone-wz77.onrender.com/login",
         {
           email: loginData.email,
           password: loginData.password,

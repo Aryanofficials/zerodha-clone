@@ -50,7 +50,7 @@ const Menu = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:3002/logout",
+        "https://zerodha-clone-wz77.onrender.com/logout",
         {},
         {
           withCredentials: true,

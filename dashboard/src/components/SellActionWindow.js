@@ -15,7 +15,7 @@ const SellActionWindow = ({uid, price}) =>{
         console.log("Sell button clicked");
         console.log("UID =", uid);
      if(uid){
-     const response = await axios.post("http://localhost:3002/newOrder", {
+     const response = await axios.post("https://zerodha-clone-wz77.onrender.com/newOrder", {
         name: uid,
         qty: stockQuantity,
         price: stockPrice,
