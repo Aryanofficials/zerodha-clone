@@ -20,8 +20,8 @@ const app = express();
 app.use(
     cors({
         origin: [
-            "zerodha-frontend-abc123.onrender.com",
-            "zerodha-frontend-abc123.onrender.com"
+            "https://zerodha-frontend-ae5z.onrender.com",
+            "https://YOUR-DASHBOARD-URL.onrender.com"
         ],
         credentials: true
     })
@@ -436,10 +436,6 @@ app.get('/allHoldings', async(req, res)=>{
 app.get('/allPositions', async(req, res)=>{
      let allPositions = await PositionsModel.find({});
      res.json(allPositions);
-});
-
-app.post("/signup", async (req, res) => {
-    // Signup logic here
 });
 
 // POST REQ FOR NEW ORDER:
