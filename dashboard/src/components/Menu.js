@@ -59,7 +59,7 @@ const Menu = () => {
 
       // After logout go to login page
       window.location.href =
-  "https://zerodha-frontend-abc123.onrender.com/auth?mode=login";
+  "https://zerodha-frontend-ae5z.onrender.com/auth?mode=login";
     } catch (error) {
       console.log("Logout Error:", error);
     }
