@@ -184,7 +184,11 @@ app.post("/login", async (req, res) => {
 
 const authenticateUser = (req, res, next) => {
 
+    console.log("Cookies:", req.cookies);
+
     const token = req.cookies.token;
+
+    console.log("Token:", token);
 
     if (!token) {
         return res.status(401).json({
@@ -194,17 +198,20 @@ const authenticateUser = (req, res, next) => {
     }
 
     try {
-
         const decoded = jwt.verify(
             token,
             process.env.JWT_SECRET
         );
+
+        console.log("Decoded:", decoded);
 
         req.userId = decoded.userId;
 
         next();
 
     } catch (error) {
+
+        console.log("JWT Error:", error.message);
 
         return res.status(401).json({
             success: false,
